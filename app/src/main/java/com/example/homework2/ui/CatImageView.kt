@@ -49,10 +49,9 @@ fun CatImageView(catId: Int, viewModel: ICatViewModel) {
         SubcomposeAsyncImage(
             model = "${context.getString(viewModel.imageUrlId)}?cat=$catId",
             contentDescription = context.getString(R.string.asyncImage_contentDescription),
-            contentScale = ContentScale.Crop,
+            contentScale = ContentScale.FillWidth,
             modifier = Modifier
                 .fillMaxWidth()
-                .defaultMinSize(minHeight = Size.minImageSize)
                 .padding(horizontal = Paddings.small)
                 .clip(RoundedCornerShape(Paddings.medium))
                 .clickable {

@@ -7,6 +7,10 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.grid.GridCells
+import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
+import androidx.compose.foundation.lazy.staggeredgrid.LazyVerticalStaggeredGrid
+import androidx.compose.foundation.lazy.staggeredgrid.StaggeredGridCells
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
@@ -33,10 +37,10 @@ fun CatList() {
         }
     }
 
-    LazyColumn(
-        modifier = Modifier.fillMaxSize(),
+    LazyVerticalStaggeredGrid(
+        columns = StaggeredGridCells.Fixed(2),
         contentPadding = PaddingValues(Paddings.small),
-        verticalArrangement = Arrangement.spacedBy(Paddings.medium)
+        verticalItemSpacing = Paddings.small
     ) {
         items(cats.size) { index ->
             if (index >= cats.size - 2 && !isLoading) {
