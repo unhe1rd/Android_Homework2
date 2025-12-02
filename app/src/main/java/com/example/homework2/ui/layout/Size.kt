@@ -8,5 +8,5 @@ object Size {
     val iconSize = 48.dp
     val heartSize = 24.dp
     val loaderSize = 80.dp
-    val imageSize = 250.dp
+    val minImageSize = 250.dp
 }

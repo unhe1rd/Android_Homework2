@@ -4,6 +4,7 @@ import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.defaultMinSize
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
@@ -50,8 +51,8 @@ fun CatImageView(catId: Int, viewModel: ICatViewModel) {
             contentDescription = context.getString(R.string.asyncImage_contentDescription),
             contentScale = ContentScale.Crop,
             modifier = Modifier
-                .size(Size.imageSize)
                 .fillMaxWidth()
+                .defaultMinSize(minHeight = Size.minImageSize)
                 .padding(horizontal = Paddings.small)
                 .clip(RoundedCornerShape(Paddings.medium))
                 .clickable {
